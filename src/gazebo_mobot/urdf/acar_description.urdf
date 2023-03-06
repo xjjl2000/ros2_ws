@@ -1,0 +1,146 @@
+<?xml version="1.0" ?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot name="acar_description">
+  <link name="robot_footprint"/>
+  <joint name="robot_footprint_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <parent link="robot_footprint"/>
+    <child link="base_link"/>
+  </joint>
+  <link name="base_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="15.0"/>
+      <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://acar_description/meshes/base_link.STL" />
+      </geometry>
+      <material name=""/>
+        <color rgba="0 0 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://acar_description/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="Wheel_FL">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="5.0"/>
+      <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://acar_description/meshes/Wheel_FL.STL"/>
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://acar_description/meshes/Wheel_FL.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Wheel_FL_joint" type="continuous">
+    <origin xyz="0.1446 0.07419 -0.025" rpy="0 -0.11901 -0.047178"/>
+    <parent link="base_link"/>
+    <child link="Wheel_FL"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+  <link name="Wheel_FR">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="5.0"/>
+      <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://acar_description/meshes/Wheel_FR.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://acar_description/meshes/Wheel_FR.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Wheel_FR_jiont" type="continuous">
+    <origin xyz="0.13698 -0.087235 -0.025" rpy="0 0 -0.047178"/>
+    <parent link="base_link"/>
+    <child link="Wheel_FR"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+  <link name="Wheel_RL">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="5.0"/>
+      <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://acar_description/meshes/Wheel_RL.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://acar_description/meshes/Wheel_RL.STL"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Wheel_RL_joint" type="continuous">
+    <origin xyz="-0.13701 0.087485 -0.025" rpy="0 -0.032172 -0.047178"/>
+    <parent link="base_link"/>
+    <child link="Wheel_RL"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+  <link name="Wheel_RR">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="5.0"/>
+      <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://acar_description/meshes/Wheel_RR.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://acar_description/meshes/Wheel_RR.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Wheel_RR_joint" type="continuous">
+    <origin xyz="-0.14463 -0.07394 -0.025" rpy="0 -0.032172 -0.047178"/>
+    <parent link="base_link"/>
+    <child link="Wheel_RR"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+</robot>

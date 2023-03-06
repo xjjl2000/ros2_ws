@@ -1,0 +1,157 @@
+<?xml version="1.0" ?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot name="bcar_description">
+    <link name="robot_footprint"/>
+    <joint name="robot_footprint_joint" type="fixed">
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <parent link="robot_footprint"/>
+        <child link="base_link"/>
+    </joint>
+    <link name="base_link">
+        <inertial>
+        <pose>0 0 0.1 0 0 0</pose>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="15.0"/>
+        <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+        </inertial>
+        <visual name="basic_visual">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+            <box size=".4 .2 .1"/>
+            <!-- <mesh filename="package://acar_description/meshes/base_link.STL"/> -->
+        </geometry>
+        </visual>
+        <collision name="collision">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+            <box size=".4 .2 .1"/>
+            <!-- <mesh filename="package://acar_description/meshes/base_link.STL" /> -->
+        </geometry>
+        </collision>
+    </link>
+    <link name="Wheel_FL">
+        <inertial>
+        <origin xyz="0.0 0 0" rpy="0 1.5707 1.5707"/>
+        <mass value="5.0"/>
+        <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+        </inertial>
+        <visual>
+        <origin xyz="0 0 0" rpy="0 1.5707 1.5707"/>
+        <geometry>
+            <cylinder length="0.05" radius="0.06"/>
+            <!-- <mesh filename="package://acar_description/meshes/Wheel_FL.STL"/> -->
+        </geometry>
+        </visual>
+        <collision>
+        <origin xyz="0 0 0" rpy="0 1.5707 1.5707"/>
+        <geometry>
+            <cylinder length="0.05" radius="0.06"/>
+            <!-- <mesh filename="package://acar_description/meshes/Wheel_FL.STL"/> -->
+        </geometry>
+        </collision>
+    </link>
+    <joint name="Wheel_FL_joint" type="continuous">
+        <origin xyz="0.1446 0.07419 -0.025" rpy="0 0 0"/>
+        <parent link="base_link"/>
+        <child link="Wheel_FL"/>
+        <axis xyz="0 1 0" rpy="0 0 0"/>
+    </joint>
+    <link name="Wheel_FR">
+        <inertial>
+        <origin xyz="0 0 0" rpy="0 1.5707 1.5707"/>
+        <mass value="5.0"/>
+        <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+        </inertial>
+        <visual>
+        <origin xyz="0 0 0" rpy="0 1.5707 1.5707"/>
+        <geometry>
+            <cylinder length="0.05" radius="0.06"/>
+            <!-- <mesh filename="package://acar_description/meshes/Wheel_FR.STL"/> -->
+        </geometry>
+        </visual>
+        <collision>
+        <origin xyz="0 0 0" rpy="0 1.5707 1.5707"/>
+        <geometry>
+            <cylinder length="0.05" radius="0.06"/>
+            <!-- <mesh filename="package://acar_description/meshes/Wheel_FR.STL" /> -->
+        </geometry>
+        </collision>
+    </link>
+    <joint name="Wheel_FR_jiont" type="continuous">
+        <origin xyz="0.13698 -0.087235 -0.025" rpy="0 0 0"/>
+        <parent link="base_link"/>
+        <child link="Wheel_FR"/>
+        <axis xyz="0 1 0" rpy="0 0 0"/>
+    </joint>
+    <link name="Wheel_RL">
+        <inertial>
+        <origin xyz="0 0 0" rpy="0 1.5707 1.5707"/>
+        <mass value="5.0"/>
+        <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+        </inertial>
+        <visual>
+        <origin xyz="0 0 0" rpy="0 1.5707 1.5707"/>
+        <geometry>
+            <cylinder length="0.05" radius="0.06"/>
+            <!-- <mesh filename="package://acar_description/meshes/Wheel_RL.STL" /> -->
+        </geometry>
+        </visual>
+        <collision>
+        <origin xyz="0 0 0" rpy="0 1.5707 1.5707" />
+        <geometry>
+            <cylinder length="0.05" radius="0.06"/>
+            <!-- <mesh filename="package://acar_description/meshes/Wheel_RL.STL" /> -->
+        </geometry>
+        </collision>
+    </link>
+    <joint name="Wheel_RL_joint" type="continuous">
+        <origin xyz="-0.13701 0.087485 -0.025" rpy="0 0 0"/>
+        <parent link="base_link"/>
+        <child link="Wheel_RL"/>
+        <axis xyz="0 1 0" rpy="0 0 0"/>
+    </joint>
+    <link name="Wheel_RR">
+        <inertial>
+        <origin xyz="0 0 0" rpy="0 1.5707 1.5707"/>
+        <mass value="5.0"/>
+        <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+        </inertial>
+        <visual>
+        <origin xyz="0 0 0" rpy="0 1.5707 1.5707"/>
+        <geometry>
+            <cylinder length="0.05" radius="0.06"/>
+            <!-- <mesh filename="package://acar_description/meshes/Wheel_RR.STL" /> -->
+        </geometry>
+        </visual>
+        <collision>
+        <origin xyz="0 0 0" rpy="0 1.5707 1.5707"/>
+        <geometry>
+            <cylinder length="0.05" radius="0.06"/>
+            <!-- <mesh filename="package://acar_description/meshes/Wheel_RR.STL"/> -->
+        </geometry>
+        </collision>
+    </link>
+    <joint name="Wheel_RR_joint" type="continuous">
+        <origin xyz="-0.14463 -0.07394 -0.025" rpy="0 0 0"/>
+        <parent link="base_link"/>
+        <child link="Wheel_RR"/>
+        <axis xyz="0 1 0" rpy="0 0 0"/>
+    </joint>
+    <gazebo reference="base_link">
+        <material>Gazebo/Gray</material>
+    </gazebo>
+    <gazebo reference="Wheel_FL">
+        <material>Gazebo/Gray</material>
+    </gazebo>
+    <gazebo reference="Wheel_FR">
+        <material>Gazebo/Gray</material>
+    </gazebo>
+    <gazebo reference="Wheel_RL">
+        <material>Gazebo/Gray</material>
+    </gazebo>
+    <gazebo reference="Wheel_RR">
+        <material>Gazebo/Gray</material>
+    </gazebo>
+</robot>
